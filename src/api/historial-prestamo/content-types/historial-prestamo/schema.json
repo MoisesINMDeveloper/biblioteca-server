@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "historial_prestamos",
+  "info": {
+    "singularName": "historial-prestamo",
+    "pluralName": "historial-prestamos",
+    "displayName": "Historial-prestamo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "usuario": {
+      "type": "string"
+    },
+    "cedula": {
+      "type": "string"
+    },
+    "fecha_prestamo": {
+      "type": "datetime"
+    },
+    "fecha_devolucion": {
+      "type": "datetime"
+    },
+    "libros": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::libro.libro",
+      "inversedBy": "historial_prestamos"
+    }
+  }
+}
